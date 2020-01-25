@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Jersey2.x_Book_Services_Provider">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <dependent-module archiveName="Jersey2.x_Book_Util-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Jersey2.x_Book_Util/Jersey2.x_Book_Util">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="Jersey2.x_Book_Services_Provider"/>
+        <property name="java-output-path" value="/Jersey2.x_Book_Services_Provider/target/classes"/>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,50 @@
+
+
+<web-app>
+
+	<context-param>
+		<param-name>resteasy.servlet.mapping.prefix</param-name>
+		<param-value>/rest</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>resteasy-servlet</servlet-name>
+		<servlet-class>
+			org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>
+				com.formparam.app.MyApplication</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>resteasy-servlet</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping><security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Products</web-resource-name>
+			<url-pattern>/rest/*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>SUPER_ADMIN</role-name>
+			<role-name>EMPLOYEE</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+	<security-role>
+		<role-name>SUPER_ADMIN</role-name>
+	</security-role>
+	<security-role>
+		<role-name>EMPLOYEE</role-name>
+	</security-role>
+	<security-role>
+		<role-name>CUSTOMER</role-name>
+	</security-role>
+
+</web-app>
